@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+    <head>
+        <title>Random train excuse</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+                user-select: none;
+            }
+
+            body, html {
+                width: 100%;
+                height: 100%;
+            }
+
+            #wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 100%;
+                height: 100%;
+            }
+
+            #box {
+                position: relative;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                background-color: grey;
+
+                word-wrap: normal;
+                overflow-wrap: normal;
+                text-align: center;
+                padding: 0px 15px;
+
+                border-radius: 10px;
+
+                box-shadow: 7px 7px 4px rgb(66, 66, 66);
+            }
+
+            #caption {
+                position: absolute;
+                bottom: 5px;
+                font-size: small;
+            }
+
+            #excuse {
+                font-size: 45px;
+            }
+
+            #stats_button_wrapper {
+                position: fixed;
+                display: flex;
+                flex-direction: row;
+                gap: 5%;
+
+                align-items: end;
+
+                cursor: pointer;
+
+                width: 6vh;
+                height: 5vh;
+                position: fixed;
+                left: 0.5vw;
+                bottom: 1vh;
+
+                z-index: 999;
+            }
+
+            .column {
+                cursor: pointer;
+
+                width: 90%;
+                background-color: rgb(202, 202, 202);
+            }
+
+            .h1 {
+                height: 30%;
+            }
+
+            .h2 {
+                height: 60%;
+            }
+
+            .h3 {
+                height: 90%;
+            }
+
+            #stats_wrapper {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                width: 100vw;
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                transition: background-color .3s ease-in-out;
+            }
+
+            #stats_box { 
+                overflow: scroll;
+
+                width: 70vw;
+                height: 70vh;
+
+                padding: 1vw;
+
+                border: .5vw outset rgb(128, 128, 128);
+                background-color: rgb(255, 245, 237);
+
+                font-family: "Nunito Sans", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+            }
+
+            .right {
+                float: right;
+            }
+
+            .sticky {
+                position: sticky;
+            }
+
+            span.line:nth-of-type(2n) {
+                background-color: rgb(160, 160, 160);
+            }
+
+            span.line:nth-of-type(2n+1) {
+                background-color: rgb(180, 180, 180)
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div id="box">
+                <div id="excuse">There was an error. Try reloading the page.<noscript><br/> Probably because you don't have javascript enabled!</noscript></div>
+                <div id="caption"></div>
+            </div>
+        </div>
+
+        <div id="stats_button_wrapper" onclick="menutoggle()">
+            <div class="column h1"></div>
+            <div class="column h3"></div>
+            <div class="column h2"></div>
+        </div>
+
+        <div id="stats_wrapper" style="background-color: #0000; pointer-events: none;">
+            <div id="stats_box" style="scale: 0;">
+                <h3 class="sticky">Stats:</h3>
+                <div id="stats">
+                    There are no stats yet! Try clicking a few times, then come back to this page.
+                </div>
+            </div>
+        </div>
+
+        <script src="./excuses.js"></script>
+        <script src="./vars.js"></script>
+
+
+        <script src="./main.js"></script>
+    </body>
+</html>
